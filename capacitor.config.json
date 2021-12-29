@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "TPO",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color=" #123456">
+    <ion-title>Your Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+        <ion-item>
+    <!-- <ion-label position="stacked">Full Name</ion-label> -->
+    <b>Name :</b>  <ion-input readonly [value]="name"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-label position="stacked">Email</ion-label> -->
+    <b>Email :</b> <ion-input type="email"  readonly  [value]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-label position="stacked">Contact</ion-label> -->
+    <b>Contact :</b> <ion-input  type="tel" readonly [value]="phone"></ion-input>
+  </ion-item>
+
+
+  <br>
+
+ 
+
+  <ion-item>
+    <ion-label><h1>Graduation</h1></ion-label>
+    </ion-item>
+      <ion-item>
+        <!-- <ion-label position="stacked">Year of Passing</ion-label> -->
+        <b>Year of Passing :</b> <ion-datetime displayFormat="YYYY" readonly [(ngModel)]="clgPassing"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="stacked">Name of College</ion-label> -->
+        <b>College Name :</b> <ion-input [value]="clgCollege" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input readonly><b>Percentage : </b>{{clgPercentage}}%</ion-input>
+      </ion-item>
+    
+  <ion-item>
+
+  <ion-label><h1>HSC</h1></ion-label>
+  </ion-item>
+    <ion-item>
+      <!-- <ion-label position="stacked">Year of Passing</ion-label> -->
+      <b>Year of Passing :</b>  <ion-datetime displayFormat="YYYY" readonly [(value)]="hscPassing"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <!-- <ion-label position="stacked">Name of College</ion-label> -->
+      <b>School Name :</b>  <ion-input [value]="hscCollege" readonly></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input readonly><b>Percentage : </b> {{hscPercentage}}%</ion-input>
+    </ion-item>
+  
+
+    <ion-item>
+      <ion-label><h1>SSC</h1></ion-label>
+      </ion-item>
+        <ion-item>
+          <!-- <ion-label position="stacked">Year of Passing</ion-label> -->
+          <b>Year of Passing :</b><ion-datetime displayFormat="YYYY" readonly [value]="sscPassing"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <!-- <ion-label position="stacked">Name of School</ion-label> -->
+          <b>School Name :</b>  <ion-input readonly [value]="sscCollege"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-input readonly><b>Percentage : </b>{{sscPercentage}}%</ion-input>
+        </ion-item>
+
+        <ion-item>
+          <!-- <ion-label position="stacked">Name of College</ion-label> -->
+          <b>Addtional Courses :</b>  <ion-input [value]="additionalCourses" readonly></ion-input>
+        </ion-item>
+      
+  <ion-list>
+
+
+    <ion-button [href]="downloadURL" color="warning">View Resume</ion-button>
+
+
+
+    <ion-item *ngFor="let f of cloudFiles">
+
+
+
+    </ion-item>
+  </ion-list>
+</ion-card>
+</ion-content>

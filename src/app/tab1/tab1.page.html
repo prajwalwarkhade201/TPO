@@ -1,0 +1,222 @@
+<ion-header>
+  <ion-toolbar color=" #123456">
+    <ion-title>Register</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu">
+
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form method="post" #regForm="ngForm">
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="person-outline" color="warning"></ion-icon>&nbsp;&nbsp;Full Name
+      </ion-label>
+      <ion-input type="text" name="f_Name" ngModel [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+  <ion-label position="floating"><ion-icon name="stats-chart-outline" color="warning"></ion-icon>&nbsp;&nbsp;PRN</ion-label>
+  <ion-input  type="number"  [(ngModel)]="uid"></ion-input>
+</ion-item> -->
+
+
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="mail-outline" color="warning"></ion-icon>&nbsp;&nbsp;Email
+      </ion-label>
+      <ion-input type="email" name="e_mail" ngModel [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon name="call-outline" color="warning"></ion-icon>&nbsp;&nbsp;Contact
+      </ion-label>
+      <ion-input type="tel" name="con_num" ngModel [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+
+
+
+
+    <ion-item lines="none" class="dropdown">
+      <ion-label>Class</ion-label>
+      <ion-select value="Select" oktext="Okay" name="class" ngModel cancelText="Dismiss">
+        <ion-select-option value="fymca">FYMCA</ion-select-option>
+        <ion-select-option value="symca">SYMCA</ion-select-option>
+        <ion-select-option value="tymca">TYMCA</ion-select-option>
+      </ion-select>
+
+
+
+    </ion-item>
+
+
+
+    <ion-item lines="none" class="dropDown">
+      <ion-label>
+        <ion-icon name="school-outline" color="warning"></ion-icon>&nbsp;&nbsp;Gender
+      </ion-label>
+      <ion-select name="gender" ngModel>
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    
+    <div>
+      <ion-list>
+        <ion-label>
+          <h1>&nbsp;&nbsp; <ion-icon name="school-outline" color="warning"></ion-icon>&nbsp;&nbsp;<b>Interests</b></h1>
+        </ion-label>
+        <ion-item>
+          <ion-checkbox color="dark"  slot="start" name="dyn_pgm" ngModel></ion-checkbox>
+          <ion-label>Dynamic Programming</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox color="dark" slot="start" name="frontend" ngModel></ion-checkbox>
+          <ion-label>Frontend</ion-label>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-checkbox color="dark" slot="start" name="backend" ngModel></ion-checkbox>
+          <ion-label>Backend</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox color="dark" slot="start" name="database" ngModel></ion-checkbox>
+          <ion-label>Database</ion-label>
+
+
+        </ion-item>
+      </ion-list>
+    </div>
+
+   
+
+    <ion-item>
+      <ion-label>
+        <h1>
+          <ion-icon name="school-outline" color="warning"></ion-icon>&nbsp;&nbsp;<b>Graduation</b>
+        </h1>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Year of Passing</ion-label>
+      <ion-datetime displayFormat="YYYY" [(ngModel)]="clgPassing" name="y_pass" ngModel></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">College Name : </ion-label>
+      <ion-input [(ngModel)]="clgCollege" name="cname" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Total Marks</ion-label>
+      <ion-input type="number" [(ngModel)]="clgMarks" name="t_marks" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marks out-off</ion-label>
+      <ion-input type="number" [(ngModel)]="clgTotal" name="m_outoff" ngModel></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input name="percentage" ngModel [value]="(clgMarks/clgTotal)*100" readonly>Percentage :   </ion-input><span>%</span>
+    </ion-item>
+
+   
+
+    <ion-item>
+      <ion-label>
+        <h1>
+          <ion-icon name="school-outline" color="warning"></ion-icon>&nbsp;&nbsp;<b>12th Details </b>
+        </h1>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Year of Passing</ion-label>
+      <ion-datetime displayFormat="YYYY" name="year_hsc" ngModel [(ngModel)]="hscPassing"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">School Name :</ion-label>
+      <ion-input [(ngModel)]="hscCollege" name="cname_hsc" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Total Marks</ion-label>
+      <ion-input type="number" name="total_marks_hsc" ngModel [(ngModel)]="hscMarks"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marks out-off</ion-label>
+      <ion-input type="number" name="marks_out_hsc" ngModel [(ngModel)]="hscTotal"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input readonly name="percentage_hsc" [value]="(hscMarks/hscTotal)*100" ngModel>Percentage :{{(hscMarks/hscTotal)*100}}</ion-input><span>%</span>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label>
+        <h1>
+          <ion-icon name="school-outline" color="warning"></ion-icon>&nbsp;&nbsp;<b>10th Details </b>
+        </h1>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Year of Passing</ion-label>
+      <ion-datetime displayFormat="YYYY" name="yearpassing_ssc" ngModel [(ngModel)]="sscPassing"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">School Name :</ion-label>
+      <ion-input name="cname_ssc" ngModel [(ngModel)]="sscCollege"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Total Marks</ion-label>
+      <ion-input type="number" name="total_marks_ssc" ngModel [(ngModel)]="sscMarks"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marks out-off</ion-label>
+      <ion-input type="number" name="total_ssc" ngModel [(ngModel)]="sscTotal"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input name="percentage_ssc" ngModel [value]="(sscMarks/sscTotal)*100" readonly>Percentage : {{(sscMarks/sscTotal)*100}}</ion-input><span>%</span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Additional Courses :</ion-label>
+      <ion-input name="additionalc" ngModel type="text" [(ngModel)]="additionalCourses"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-card class="ion-text-center" *ngIf="!isFileUploading && !isFileUploaded">
+        <ion-card-header>
+          <ion-card-title>Upload Resume</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="warning" size="medium">
+            <input type="file" name="upload_resume" accept=".pdf" ngModel (change)="uploadImage($event.target.files)"   />
+
+            
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+   
+
+      <div *ngIf="trackSnapshot | async as snap">
+        File size: {{ snap.totalBytes | formatFileSize }}
+
+        Data transfered: {{ snap.bytesTransferred | formatFileSize }}
+        <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+      </div>
+
+    </ion-item>
+    <ion-button color="dark" expand="block" fill="outline" (click)="submitForm(regForm)">Submit</ion-button>
+
+
+  </form>
+</ion-content>
